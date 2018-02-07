@@ -1,0 +1,53 @@
+model FactoryPattern
+
+class VegieGarden
+attributes
+name:String
+
+operations
+plant()
+end
+
+class AnnualGarden
+attributes
+name:String
+
+operations
+plant()
+end
+
+
+class PerennialGarden
+attributes
+name:String
+
+operations
+plant()
+end
+
+class Plant
+attributes
+name:String
+
+operations
+getName()
+end
+
+class GardenFactory
+attributes
+name:String
+operations
+getPlant()
+end
+
+class FactoryPatternDemo
+attributes
+name:String
+operations
+main()
+end
+
+association growVegie between
+Plant[1] role product
+VegieGarden[0..*] role garden
+end
