@@ -40,7 +40,7 @@ operations
 getPlant()
 end
 
-class FactoryPatternDemo
+abstract class FactoryPatternDemo
 attributes
 name:String
 operations
@@ -48,6 +48,6 @@ main()
 end
 
 association growVegie between
-Plant[1] role product
-VegieGarden[0..*] role garden
+Plant[1..*] role product
+VegieGarden[1..*] role garden
 end
