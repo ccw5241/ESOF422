@@ -1,53 +1,64 @@
 model FactoryPattern
 
-class VegieGarden
-attributes
-name:String
-
-operations
-plant()
-end
-
-class AnnualGarden
-attributes
-name:String
-
-operations
-plant()
-end
-
-
-class PerennialGarden
-attributes
-name:String
-
-operations
-plant()
-end
-
-class Plant
-attributes
-name:String
-
-operations
-getName()
-end
-
-class GardenFactory
+class Flower
 attributes
 name:String
 operations
-getPlant()
 end
 
-abstract class FactoryPatternDemo
+class Rose
 attributes
 name:String
 operations
-main()
 end
 
-association growVegie between
-Plant[1..*] role product
-VegieGarden[1..*] role garden
+class Mum
+attributes
+name:String
+operations
+end
+
+class Cuckoo
+attributes
+name:String
+operations
+end
+
+class FlowerFactory
+  attributes
+  name: String
+  operations
+    end
+
+class Garden
+attributes
+FlowerFactory: Garden
+name:String
+operations
+end
+
+-- associations
+association plant between
+Flower[0..*]
+FlowerFactory[0..*]
+end
+
+association has between
+FlowerFactory[0..*]
+Garden[0..*]
+end
+
+association ro between
+Rose[0..*]
+Flower[0..*]
+end
+
+association mu between
+Mum[0..*]
+Flower[0..*]
+end
+
+association cu between
+Cuckoo[0..*]
+Flower[0..*]
 end
